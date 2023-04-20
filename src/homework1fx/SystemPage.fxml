@@ -28,8 +28,8 @@
             <Font name="System Italic" size="15.0" />
          </font>
       </Button>
-      <TextField layoutX="86.0" layoutY="175.0" prefHeight="31.0" prefWidth="106.0" />
-      <TextField layoutX="253.0" layoutY="175.0" prefHeight="31.0" prefWidth="112.0" />
+      <TextField fx:id="USDField" layoutX="86.0" layoutY="175.0" prefHeight="31.0" prefWidth="106.0" />
+      <TextField fx:id="NISField" layoutX="253.0" layoutY="175.0" prefHeight="31.0" prefWidth="112.0" />
       <Label layoutX="207.0" layoutY="177.0" text="TO" textFill="#33426f">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -45,5 +45,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <Label fx:id="label" alignment="CENTER" layoutX="165.0" layoutY="223.0" prefHeight="21.0" prefWidth="121.0" textFill="RED" />
    </children>
 </AnchorPane>

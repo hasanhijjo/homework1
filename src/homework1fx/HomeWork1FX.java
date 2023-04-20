@@ -19,7 +19,7 @@ public class HomeWork1FX extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SystemPage.fxml"));
         
         Scene scene = new Scene(root);
         

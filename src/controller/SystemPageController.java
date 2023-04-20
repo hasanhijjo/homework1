@@ -16,7 +16,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import static javax.management.Query.value;
+
 
 /**
  * FXML Controller class
@@ -32,6 +36,12 @@ public class SystemPageController implements Initializable {
     private Button logoutbutton;
     @FXML
     private Button convertbutton;
+    @FXML
+    private TextField USDField;
+    @FXML
+    private TextField NISField;
+    @FXML
+    private Label label;
 
     /**
      * Initializes the controller class.
@@ -43,15 +53,32 @@ public class SystemPageController implements Initializable {
 
     @FXML
     private void handellogoutbutton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+  
     }
 
     @FXML
     private void handelconvertbutton(ActionEvent event) {
-    }
 
+        try {
+
+            if (NISField.getText().length() > 0) {
+                double nis = Double.parseDouble(NISField.getText());
+                double usdValue = nis / 3.5;
+
+                USDField.setText(Double.toString(usdValue));
+
+            } else if (USDField.getText().length() > 0) {
+                double usd = Double.parseDouble(USDField.getText());
+                double nisValue = usd * 3.5;
+
+                NISField.setText(Double.toString(nisValue));
+            } else {
+                label.setText("Invalid input");
+            }
+
+        } catch (NumberFormatException e) {
+            label.setText("Invalid input");
+            System.out.println("Invalid input");
+        }
+    }
 }
