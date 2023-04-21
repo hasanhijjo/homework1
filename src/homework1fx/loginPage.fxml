@@ -32,5 +32,10 @@
             <Image url="@photo_2023-04-18_23-04-45.jpg" />
          </image>
       </ImageView>
+      <Label fx:id="lapelerror" alignment="CENTER" layoutX="57.0" layoutY="547.0" prefHeight="35.0" prefWidth="237.0" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
