@@ -5,6 +5,8 @@
  */
 package controller;
 
+import View.AdminDashboard;
+import View.ViewManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -35,6 +38,8 @@ public class FXMLController implements Initializable {
     private TextField usernamefilde;
     @FXML
     private TextField passwordfilde;
+    @FXML
+    private Label lapelerror;
 
     /**
      * Initializes the controller class.
@@ -44,14 +49,19 @@ public class FXMLController implements Initializable {
         // TODO
     }
 
-    @FXML
+   @FXML
     private void handlerloginButton(ActionEvent event) throws IOException {
+      if(usernamefilde.getText().equals("user") && passwordfilde.getText().equals("userpass")) {
         root = FXMLLoader.load(getClass().getResource("SystemPage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }else{
+      lapelerror.setText("User Name OR Password Not Correct");
     }
+    }
+    
 
     @FXML
     private void handelusernamefilde(ActionEvent event) {
