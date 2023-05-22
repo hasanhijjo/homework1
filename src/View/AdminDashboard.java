@@ -21,12 +21,13 @@ public class AdminDashboard extends Stage {
     
     public AdminDashboard() throws IOException {
         
-        FXMLLoader SystemPageLoader = new FXMLLoader(getClass().getResource("SystemPage.fxml"));
+        FXMLLoader SystemPageLoader = new FXMLLoader(getClass().getResource("/homework1fx/SystemPage.fxml"));
         Parent SystemPageRoot = SystemPageLoader.load();
         SystemPageScene = new Scene(SystemPageRoot);
         this.setScene(SystemPageScene);
         this.setTitle("System Page");
     }
+ 
     
     public void changeSceneToSystemPageScene() {
         this.setScene(SystemPageScene);

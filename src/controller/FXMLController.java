@@ -5,22 +5,16 @@
  */
 package controller;
 
-import View.AdminDashboard;
 import View.ViewManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -29,9 +23,6 @@ import javafx.stage.Stage;
  */
 public class FXMLController implements Initializable {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     @FXML
     private Button loginButton;
     @FXML
@@ -47,21 +38,15 @@ public class FXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+    }    
 
-   @FXML
+    @FXML
     private void handlerloginButton(ActionEvent event) throws IOException {
-      if(usernamefilde.getText().equals("user") && passwordfilde.getText().equals("userpass")) {
-        root = FXMLLoader.load(getClass().getResource("SystemPage.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }else{
-      lapelerror.setText("User Name OR Password Not Correct");
-    }
-    }
-    
+      if (usernamefilde.getText().equals("user") && passwordfilde.getText().equals("userpass")) {
+    ViewManager.openAdminPage();
+} else {
+    // Handle the case when the username or password is incorrect
+}}
 
     @FXML
     private void handelusernamefilde(ActionEvent event) {
@@ -70,5 +55,5 @@ public class FXMLController implements Initializable {
     @FXML
     private void handelpasswordfilde(ActionEvent event) {
     }
-
+    
 }
